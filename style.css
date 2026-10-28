@@ -208,22 +208,7 @@ h1 {
 .btn.ghost { border-color: var(--rule); background: transparent; color: var(--ink); }
 .btn.ghost:hover { border-color: var(--ink); }
 
-/* Tiles */
-
-.glance {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
-}
-.hero .glance { margin-top: 36px; }
-
-.tile {
-  padding: 20px;
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  background: var(--card);
-  box-shadow: var(--shadow);
-}
+/* Icons */
 
 .icon {
   display: grid;
@@ -244,30 +229,15 @@ h1 {
   stroke-linejoin: round;
 }
 
-.tile .icon { margin-bottom: 14px; }
-.tile h3 { margin: 0 0 4px; font-size: 16px; line-height: 1.35; }
-.tile p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
-
 /* Home sections */
 
 .band { padding: 56px 0; }
-.band + .band { border-top: 1px solid var(--rule); }
-
-.section-title {
-  margin: 0 0 8px;
-  font-family: var(--serif);
-  font-size: clamp(28px, 4vw, 34px);
-  font-weight: 600;
-  letter-spacing: -0.015em;
-}
-
-.section-lede { margin: 0 0 28px; color: var(--muted); }
+.band + .band { padding-top: 0; }
 
 .doc-links {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 16px;
-  margin-top: 24px;
 }
 
 .doc-card {
@@ -289,150 +259,31 @@ h1 {
 .doc-card .desc { color: var(--muted); font-size: 15px; line-height: 1.55; }
 .doc-card .go { margin-top: 12px; color: var(--accent); font-size: 15px; font-weight: 600; }
 
-.faq { margin: 0; border-top: 1px solid var(--rule); }
-.faq details { border-bottom: 1px solid var(--rule); }
-
-.faq summary {
-  position: relative;
-  padding: 18px 44px 18px 0;
-  font-weight: 600;
-  line-height: 1.45;
-  list-style: none;
-  cursor: pointer;
-}
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::after {
-  content: "+";
-  position: absolute;
-  right: 6px;
-  top: 50%;
-  color: var(--accent);
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1;
-  transform: translateY(-50%);
-  transition: transform 0.2s ease;
-}
-.faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
-.faq details p { margin: 0 0 18px; color: var(--ink-soft); }
-
 .contact {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 16px 24px;
-  margin-top: 36px;
-  padding: 24px;
+  padding: 26px;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   background: var(--card);
   box-shadow: var(--shadow);
 }
-.contact h3 { margin: 0 0 4px; font-family: var(--serif); font-size: 23px; font-weight: 600; }
-.contact p { max-width: 48ch; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.contact h2 { margin: 0 0 6px; font-family: var(--serif); font-size: 28px; font-weight: 600; letter-spacing: -0.01em; }
+.contact p { max-width: 52ch; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
 
 /* Legal documents */
 
-.doc {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 32px;
-  padding: 40px 0 88px;
-}
-
-.toc details {
-  border: 1px solid var(--rule);
-  border-radius: 14px;
-  background: var(--card);
-}
-
-.toc summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 16px;
-  font-size: 15px;
-  font-weight: 600;
-  list-style: none;
-  cursor: pointer;
-}
-.toc summary::-webkit-details-marker { display: none; }
-.toc summary::after {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-right: 2px solid var(--muted);
-  border-bottom: 2px solid var(--muted);
-  transform: translateY(-2px) rotate(45deg);
-  transition: transform 0.2s ease;
-}
-.toc details[open] summary::after { transform: translateY(2px) rotate(-135deg); }
-
-.toc ol {
-  margin: 0;
-  padding: 0 8px 12px;
-  list-style: none;
-  counter-reset: toc;
-}
-.toc li { counter-increment: toc; }
-
-.toc a {
-  display: flex;
-  gap: 10px;
-  padding: 6px 8px;
-  border-radius: 8px;
-  color: var(--ink-soft);
-  font-size: 14px;
-  line-height: 1.4;
-  text-decoration: none;
-}
-.toc a::before {
-  content: counter(toc, decimal-leading-zero);
-  padding-top: 1px;
-  color: var(--muted);
-  font-size: 12px;
-  font-variant-numeric: tabular-nums;
-}
-.toc a:hover { background: var(--accent-soft); color: var(--ink); }
-.toc a[aria-current] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
-.toc a[aria-current]::before { color: var(--accent); }
-
-@media (min-width: 960px) {
-  .doc {
-    grid-template-columns: 240px minmax(0, 1fr);
-    gap: 64px;
-    padding-top: 48px;
-  }
-
-  .toc {
-    position: sticky;
-    top: 88px;
-    align-self: start;
-    max-height: calc(100vh - 112px);
-    overflow-y: auto;
-  }
-
-  .toc details { border: 0; background: none; }
-
-  .toc summary {
-    padding: 0 8px 10px;
-    color: var(--muted);
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    pointer-events: none;
-  }
-  .toc summary::after { display: none; }
-  .toc ol { padding: 0; }
-}
+.doc { padding: 40px 0 88px; }
 
 .prose { max-width: 70ch; counter-reset: sec; }
 
 .prose section { counter-increment: sec; }
 .prose section + section {
-  margin-top: 40px;
-  padding-top: 40px;
+  margin-top: 32px;
+  padding-top: 32px;
   border-top: 1px solid var(--rule);
 }
 
@@ -461,10 +312,9 @@ h1 {
   font-variant-numeric: tabular-nums;
 }
 
-.prose h3 { margin: 24px 0 6px; font-size: 17px; }
-.prose p { margin: 0 0 14px; }
+.prose p { margin: 0; }
 
-.prose ul { margin: 0 0 14px; padding: 0; list-style: none; }
+.prose ul { margin: 0; padding: 0; list-style: none; }
 .prose ul li { position: relative; margin: 8px 0; padding-left: 22px; }
 .prose ul li::before {
   content: "";
@@ -476,30 +326,6 @@ h1 {
   border-radius: 50%;
   background: var(--accent);
 }
-
-.note {
-  margin: 18px 0;
-  padding: 16px 18px;
-  border-left: 3px solid var(--accent);
-  border-radius: 0 12px 12px 0;
-  background: var(--accent-soft);
-}
-.note p:last-child { margin-bottom: 0; }
-
-.features { display: grid; gap: 10px; margin: 20px 0; }
-
-.feature {
-  display: grid;
-  grid-template-columns: 40px minmax(0, 1fr);
-  gap: 14px;
-  align-items: start;
-  padding: 16px;
-  border: 1px solid var(--rule);
-  border-radius: 14px;
-  background: var(--card);
-}
-.feature h3 { margin: 0 0 2px; font-size: 16px; }
-.feature p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
 
 /* Footer */
 

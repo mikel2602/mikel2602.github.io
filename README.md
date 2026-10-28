@@ -9,7 +9,7 @@ account, served by GitHub Pages.
 | Terms of Use (EULA) | https://mikel2602.github.io/terms/ | Terms of Use link in the description / custom EULA |
 | Support | https://mikel2602.github.io/#support | Support URL |
 
-Static HTML with one stylesheet and one small script; there is no build step.
+Static HTML and one stylesheet; there is no build step.
 `.nojekyll` stops GitHub from running Jekyll, so files are served exactly as
 committed. A change is live a minute or two after it is pushed to `main`.
 
