@@ -1,2 +1,16 @@
 # mikel2602.github.io
-Privacy Policy, Terms of Use and support pages for the iOS apps published from this account.
+
+Public pages for the App Store listings of the apps published from this
+account, served by GitHub Pages.
+
+| Page | URL | App Store Connect field |
+| --- | --- | --- |
+| Privacy Policy | https://mikel2602.github.io/privacy/ | Privacy Policy URL |
+| Terms of Use (EULA) | https://mikel2602.github.io/terms/ | Terms of Use link in the description / custom EULA |
+| Support | https://mikel2602.github.io/#support | Support URL |
+
+Static HTML with one stylesheet and one small script; there is no build step.
+`.nojekyll` stops GitHub from running Jekyll, so files are served exactly as
+committed. A change is live a minute or two after it is pushed to `main`.
+
+When a page changes, update its "Effective" date in the hero.
