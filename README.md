@@ -5,9 +5,9 @@ account, served by GitHub Pages.
 
 | Page | URL | App Store Connect field |
 | --- | --- | --- |
+| Home (contact and support) | https://mikel2602.github.io/ | Support URL |
 | Privacy Policy | https://mikel2602.github.io/privacy/ | Privacy Policy URL |
 | Terms of Use (EULA) | https://mikel2602.github.io/terms/ | Terms of Use link in the description |
-| Support | https://mikel2602.github.io/#support | Support URL |
 
 Plain HTML and one stylesheet; there is no build step. `.nojekyll` stops
 GitHub from running Jekyll, so files are served exactly as committed. A change
